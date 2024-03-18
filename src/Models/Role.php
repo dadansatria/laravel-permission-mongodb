@@ -3,7 +3,7 @@
 namespace Dadansatria\Permission\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Jenssegers\Mongodb\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 use Dadansatria\Permission\Contracts\PermissionInterface;
 use Dadansatria\Permission\Contracts\RoleInterface;
 use Dadansatria\Permission\Exceptions\GuardDoesNotMatch;

@@ -3,9 +3,9 @@
 namespace Dadansatria\Permission\Traits;
 
 use Illuminate\Support\Collection;
-use Jenssegers\Mongodb\Eloquent\Builder;
-use Jenssegers\Mongodb\Eloquent\Model;
-use Jenssegers\Mongodb\Relations\BelongsToMany;
+use MongoDB\Laravel\Eloquent\Builder;
+use MongoDB\Laravel\Eloquent\Model;
+use MongoDB\Laravel\Relations\BelongsToMany;
 use Dadansatria\Permission\Contracts\RoleInterface as Role;
 use Dadansatria\Permission\Helpers;
 use Dadansatria\Permission\PermissionRegistrar;

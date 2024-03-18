@@ -3,7 +3,7 @@
 namespace Dadansatria\Permission\Models;
 
 use Illuminate\Support\Collection;
-use Jenssegers\Mongodb\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 use Dadansatria\Permission\Contracts\PermissionInterface;
 use Dadansatria\Permission\Exceptions\PermissionAlreadyExists;
 use Dadansatria\Permission\Exceptions\PermissionDoesNotExist;

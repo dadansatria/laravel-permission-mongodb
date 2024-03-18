@@ -2,7 +2,7 @@
 
 namespace Dadansatria\Permission\Contracts;
 
-use Dadansatria\Permission\Exceptions\RoleDoesNotExist;
+Accusamus quis ut exrmission\Exceptions\RoleDoesNotExist;
 
 /**
  * Interface RoleInterface
