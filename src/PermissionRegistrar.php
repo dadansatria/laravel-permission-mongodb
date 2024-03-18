@@ -1,17 +1,17 @@
 <?php
 
-namespace Maklad\Permission;
+namespace Dadansatria\Permission;
 
 use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Collection;
-use Maklad\Permission\Contracts\PermissionInterface as Permission;
+use Dadansatria\Permission\Contracts\PermissionInterface as Permission;
 
 /**
  * Class PermissionRegistrar
- * @package Maklad\Permission
+ * @package Dadansatria\Permission
  */
 class PermissionRegistrar
 {

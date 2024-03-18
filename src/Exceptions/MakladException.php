@@ -1,6 +1,6 @@
 <?php
 
-namespace Maklad\Permission\Exceptions;
+namespace Dadansatria\Permission\Exceptions;
 
 use InvalidArgumentException;
 use Throwable;
@@ -8,13 +8,13 @@ use function app;
 use function config;
 
 /**
- * Class MakladException
- * @package Maklad\Permission\Exceptions
+ * Class DadansatriaException
+ * @package Dadansatria\Permission\Exceptions
  */
-class MakladException extends InvalidArgumentException
+class DadansatriaException extends InvalidArgumentException
 {
     /**
-     * MakladException constructor.
+     * DadansatriaException constructor.
      *
      * @param string|null $message
      * @param int $code

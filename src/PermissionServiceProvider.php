@@ -1,17 +1,17 @@
 <?php
 
-namespace Maklad\Permission;
+namespace Dadansatria\Permission;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
-use Maklad\Permission\Contracts\PermissionInterface as Permission;
-use Maklad\Permission\Contracts\RoleInterface as Role;
-use Maklad\Permission\Directives\PermissionDirectives;
+use Dadansatria\Permission\Contracts\PermissionInterface as Permission;
+use Dadansatria\Permission\Contracts\RoleInterface as Role;
+use Dadansatria\Permission\Directives\PermissionDirectives;
 
 /**
  * Class PermissionServiceProvider
- * @package Maklad\Permission
+ * @package Dadansatria\Permission
  */
 class PermissionServiceProvider extends ServiceProvider
 {

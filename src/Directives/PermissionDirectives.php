@@ -1,13 +1,13 @@
 <?php
 
-namespace Maklad\Permission\Directives;
+namespace Dadansatria\Permission\Directives;
 
 use Illuminate\View\Compilers\BladeCompiler;
 use function explode;
 
 /**
  * Class PermissionDirectives
- * @package Maklad\Permission\Directives
+ * @package Dadansatria\Permission\Directives
  */
 class PermissionDirectives
 {

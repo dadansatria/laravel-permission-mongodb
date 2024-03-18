@@ -95,7 +95,7 @@ composer require mostafamaklad/laravel-permission-mongodb:"^3.1"
 You can publish [the migration](database/migrations/create_permission_collections.php.stub) with:
 
 ```bash
-php artisan vendor:publish --provider="Maklad\Permission\PermissionServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Dadansatria\Permission\PermissionServiceProvider" --tag="migrations"
 ```
 
 ```bash
@@ -105,7 +105,7 @@ php artisan migrate
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Maklad\Permission\PermissionServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Dadansatria\Permission\PermissionServiceProvider" --tag="config"
 ```
 
 When published, the [`config/permission.php`](config/permission.php) config file contains:
@@ -121,10 +121,10 @@ return [
          * is often just the "Permission" model but you may use whatever you like.
          *
          * The model you want to use as a Permission model needs to implement the
-         * `Maklad\Permission\Contracts\Permission` contract.
+         * `Dadansatria\Permission\Contracts\Permission` contract.
          */
 
-        'permission' => Maklad\Permission\Models\Permission::class,
+        'permission' => Dadansatria\Permission\Models\Permission::class,
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -132,10 +132,10 @@ return [
          * is often just the "Role" model but you may use whatever you like.
          *
          * The model you want to use as a Role model needs to implement the
-         * `Maklad\Permission\Contracts\Role` contract.
+         * `Dadansatria\Permission\Contracts\Role` contract.
          */
 
-        'role' => Maklad\Permission\Models\Role::class,
+        'role' => Dadansatria\Permission\Models\Role::class,
 
     ],
 
@@ -210,8 +210,8 @@ Then, in `bootstrap/app.php`, register the middlewares:
 ```php
 $app->routeMiddleware([
     'auth'       => App\Http\Middleware\Authenticate::class,
-    'permission' => Maklad\Permission\Middlewares\PermissionMiddleware::class,
-    'role'       => Maklad\Permission\Middlewares\RoleMiddleware::class,
+    'permission' => Dadansatria\Permission\Middlewares\PermissionMiddleware::class,
+    'role'       => Dadansatria\Permission\Middlewares\RoleMiddleware::class,
 ]);
 ```
 
@@ -219,7 +219,7 @@ As well as the configuration and the service provider:
 
 ```php
 $app->configure('permission');
-$app->register(Maklad\Permission\PermissionServiceProvider::class);
+$app->register(Dadansatria\Permission\PermissionServiceProvider::class);
 ```
 
 Now, run your migrations:
@@ -230,7 +230,7 @@ php artisan migrate
 
 ## Usage
 
-First, add the `Maklad\Permission\Traits\HasRoles` trait to your `User` model(s):
+First, add the `Dadansatria\Permission\Traits\HasRoles` trait to your `User` model(s):
 
 ```php
 use Illuminate\Auth\Authenticatable;
@@ -238,7 +238,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use Maklad\Permission\Traits\HasRoles;
+use Dadansatria\Permission\Traits\HasRoles;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
@@ -252,7 +252,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
 ```php
 use Jenssegers\Mongodb\Eloquent\Model as Model;
-use Maklad\Permission\Traits\HasRoles;
+use Dadansatria\Permission\Traits\HasRoles;
 
 class Page extends Model
 {
@@ -268,8 +268,8 @@ This package allows for users to be associated with permissions and roles. Every
 A `Role` and a `Permission` are regular Moloquent models. They require a `name` and can be created like this:
 
 ```php
-use Maklad\Permission\Models\Role;
-use Maklad\Permission\Models\Permission;
+use Dadansatria\Permission\Models\Role;
+use Dadansatria\Permission\Models\Permission;
 
 $role = Role::create(['name' => 'writer']);
 $permission = Permission::create(['name' => 'edit articles']);
@@ -324,7 +324,7 @@ $users = User::role('writer')->get(); // Returns only users with the role 'write
 $users = User::permission('edit articles')->get(); // Returns only users with the permission 'edit articles'
 ```
 
-The scope can accept a string, a `\Maklad\Permission\Models\Role` object, a `\Maklad\Permission\Models\Permission` object or an `\Illuminate\Support\Collection` object.
+The scope can accept a string, a `\Dadansatria\Permission\Models\Role` object, a `\Dadansatria\Permission\Models\Permission` object or an `\Illuminate\Support\Collection` object.
 
 
 ### Using "direct" permissions
@@ -417,7 +417,7 @@ $user->hasAllRoles(Role::all());
 ```
 
 The `assignRole`, `hasRole`, `hasAnyRole`, `hasAllRoles`  and `removeRole` functions can accept a
- string, a `\Maklad\Permission\Models\Role` object or an `\Illuminate\Support\Collection` object.
+ string, a `\Dadansatria\Permission\Models\Role` object or an `\Illuminate\Support\Collection` object.
 
 A permission can be given to a role:
 
@@ -438,7 +438,7 @@ $role->revokePermissionTo('edit articles');
 ```
 
 The `givePermissionTo` and `revokePermissionTo` functions can accept a
-string or a `Maklad\Permission\Models\Permission` object.
+string or a `Dadansatria\Permission\Models\Permission` object.
 
 Permissions are inherited from roles automatically.
 Additionally, individual permissions can be assigned to the user too. 
@@ -473,7 +473,7 @@ $user->getPermissionsViaRoles();
 $user->getAllPermissions();
 ```
 
-All these responses are collections of `Maklad\Permission\Models\Permission` objects.
+All these responses are collections of `Dadansatria\Permission\Models\Permission` objects.
 
 If we follow the previous example, the first response will be a collection with the `delete article` permission, the
 second will be a collection with the `edit article` permission and the third will contain both.
@@ -584,8 +584,8 @@ This package comes with `RoleMiddleware` and `PermissionMiddleware` middleware. 
 ```php
 protected $routeMiddleware = [
     // ...
-    'role' => \Maklad\Permission\Middlewares\RoleMiddleware::class,
-    'permission' => \Maklad\Permission\Middlewares\PermissionMiddleware::class,
+    'role' => \Dadansatria\Permission\Middlewares\RoleMiddleware::class,
+    'permission' => \Dadansatria\Permission\Middlewares\PermissionMiddleware::class,
 ];
 ```
 
@@ -618,7 +618,7 @@ You can add something in Laravel exception handler:
 ```php
 public function render($request, Exception $exception)
 {
-    if ($exception instanceof \Maklad\Permission\Exceptions\UnauthorizedException) {
+    if ($exception instanceof \Dadansatria\Permission\Exceptions\UnauthorizedException) {
         // Code here ...
     }
 
@@ -660,7 +660,7 @@ public function setUp()
     parent::setUp();
 
     // now re-register all the roles and permissions
-    $this->app->make(\Maklad\Permission\PermissionRegistrar::class)->registerPermissions();
+    $this->app->make(\Dadansatria\Permission\PermissionRegistrar::class)->registerPermissions();
 }
 ```
 
@@ -673,8 +673,8 @@ Two notes about Database Seeding:
 2. Here's a sample seeder, which clears the cache, creates permissions, and then assigns permissions to roles:
 ```php
 use Illuminate\Database\Seeder;
-use Maklad\Permission\Models\Role;
-use Maklad\Permission\Models\Permission;
+use Dadansatria\Permission\Models\Role;
+use Dadansatria\Permission\Models\Permission;
 
 class RolesAndPermissionsSeeder extends Seeder
 {
@@ -703,18 +703,18 @@ class RolesAndPermissionsSeeder extends Seeder
 ## Extending
 If you need to EXTEND the existing `Role` or `Permission` models note that:
 
-- Your `Role` model needs to extend the `Maklad\Permission\Models\Role` model
-- Your `Permission` model needs to extend the `Maklad\Permission\Models\Permission` model
+- Your `Role` model needs to extend the `Dadansatria\Permission\Models\Role` model
+- Your `Permission` model needs to extend the `Dadansatria\Permission\Models\Permission` model
 
 If you need to extend or replace the existing `Role` or `Permission` models you just need to
 keep the following things in mind:
 
-- Your `Role` model needs to implement the `Maklad\Permission\Contracts\Role` contract
-- Your `Permission` model needs to implement the `Maklad\Permission\Contracts\Permission` contract
+- Your `Role` model needs to implement the `Dadansatria\Permission\Contracts\Role` contract
+- Your `Permission` model needs to implement the `Dadansatria\Permission\Contracts\Permission` contract
 
 In BOTH cases, whether extending or replacing, you will need to specify your new models in the configuration. To do this you must update the `models.role` and `models.permission` values in the configuration file after publishing the configuration with this command:
   ```bash
-  php artisan vendor:publish --provider="Maklad\Permission\PermissionServiceProvider" --tag="config"
+  php artisan vendor:publish --provider="Dadansatria\Permission\PermissionServiceProvider" --tag="config"
   ```
 
 ## Cache
@@ -772,7 +772,7 @@ If you discover any security-related issues, please email dev.mostafa.maklad@gma
 ## Credits
 
 - [Freek Van der Herten][link-freekmurze]
-- [Mostafa Maklad][link-author]
+- [Mostafa Dadansatria][link-author]
 - [All Contributors][link-contributors]
 
 ## License

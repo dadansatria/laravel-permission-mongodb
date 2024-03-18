@@ -1,20 +1,20 @@
 <?php
 
-namespace Maklad\Permission\Traits;
+namespace Dadansatria\Permission\Traits;
 
 use Illuminate\Support\Collection;
 use Jenssegers\Mongodb\Eloquent\Builder;
 use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Relations\BelongsToMany;
-use Maklad\Permission\Contracts\RoleInterface as Role;
-use Maklad\Permission\Helpers;
-use Maklad\Permission\PermissionRegistrar;
+use Dadansatria\Permission\Contracts\RoleInterface as Role;
+use Dadansatria\Permission\Helpers;
+use Dadansatria\Permission\PermissionRegistrar;
 use ReflectionException;
 use function collect;
 
 /**
  * Trait HasRoles
- * @package Maklad\Permission\Traits
+ * @package Dadansatria\Permission\Traits
  */
 trait HasRoles
 {

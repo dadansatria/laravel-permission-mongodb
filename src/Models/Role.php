@@ -1,25 +1,25 @@
 <?php
 
-namespace Maklad\Permission\Models;
+namespace Dadansatria\Permission\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Jenssegers\Mongodb\Eloquent\Model;
-use Maklad\Permission\Contracts\PermissionInterface;
-use Maklad\Permission\Contracts\RoleInterface;
-use Maklad\Permission\Exceptions\GuardDoesNotMatch;
-use Maklad\Permission\Exceptions\RoleAlreadyExists;
-use Maklad\Permission\Exceptions\RoleDoesNotExist;
-use Maklad\Permission\Guard;
-use Maklad\Permission\Helpers;
-use Maklad\Permission\Traits\HasPermissions;
-use Maklad\Permission\Traits\RefreshesPermissionCache;
+use Dadansatria\Permission\Contracts\PermissionInterface;
+use Dadansatria\Permission\Contracts\RoleInterface;
+use Dadansatria\Permission\Exceptions\GuardDoesNotMatch;
+use Dadansatria\Permission\Exceptions\RoleAlreadyExists;
+use Dadansatria\Permission\Exceptions\RoleDoesNotExist;
+use Dadansatria\Permission\Guard;
+use Dadansatria\Permission\Helpers;
+use Dadansatria\Permission\Traits\HasPermissions;
+use Dadansatria\Permission\Traits\RefreshesPermissionCache;
 use ReflectionException;
 use function is_string;
 
 /**
  * Class Role
  * @property string $_id
- * @package Maklad\Permission\Models
+ * @package Dadansatria\Permission\Models
  */
 class Role extends Model implements RoleInterface
 {

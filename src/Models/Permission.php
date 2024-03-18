@@ -1,24 +1,24 @@
 <?php
 
-namespace Maklad\Permission\Models;
+namespace Dadansatria\Permission\Models;
 
 use Illuminate\Support\Collection;
 use Jenssegers\Mongodb\Eloquent\Model;
-use Maklad\Permission\Contracts\PermissionInterface;
-use Maklad\Permission\Exceptions\PermissionAlreadyExists;
-use Maklad\Permission\Exceptions\PermissionDoesNotExist;
-use Maklad\Permission\Guard;
-use Maklad\Permission\Helpers;
-use Maklad\Permission\PermissionRegistrar;
-use Maklad\Permission\Traits\HasRoles;
-use Maklad\Permission\Traits\RefreshesPermissionCache;
+use Dadansatria\Permission\Contracts\PermissionInterface;
+use Dadansatria\Permission\Exceptions\PermissionAlreadyExists;
+use Dadansatria\Permission\Exceptions\PermissionDoesNotExist;
+use Dadansatria\Permission\Guard;
+use Dadansatria\Permission\Helpers;
+use Dadansatria\Permission\PermissionRegistrar;
+use Dadansatria\Permission\Traits\HasRoles;
+use Dadansatria\Permission\Traits\RefreshesPermissionCache;
 use ReflectionException;
 use function app;
 
 /**
  * Class Permission
  * @property string $_id
- * @package Maklad\Permission\Models
+ * @package Dadansatria\Permission\Models
  */
 class Permission extends Model implements PermissionInterface
 {

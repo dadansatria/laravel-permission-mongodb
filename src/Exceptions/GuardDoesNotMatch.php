@@ -1,11 +1,11 @@
 <?php
 
-namespace Maklad\Permission\Exceptions;
+namespace Dadansatria\Permission\Exceptions;
 
 /**
  * Class GuardDoesNotMatch
- * @package Maklad\Permission\Exceptions
+ * @package Dadansatria\Permission\Exceptions
  */
-class GuardDoesNotMatch extends MakladException
+class GuardDoesNotMatch extends DadansatriaException
 {
 }

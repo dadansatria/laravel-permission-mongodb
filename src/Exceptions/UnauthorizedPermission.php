@@ -1,10 +1,10 @@
 <?php
 
-namespace Maklad\Permission\Exceptions;
+namespace Dadansatria\Permission\Exceptions;
 
 /**
  * Class UnauthorizedPermission
- * @package Maklad\Permission\Exceptions
+ * @package Dadansatria\Permission\Exceptions
  */
 class UnauthorizedPermission extends UnauthorizedException
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Maklad\Permission\Contracts;
+namespace Dadansatria\Permission\Contracts;
 
-use Maklad\Permission\Exceptions\PermissionDoesNotExist;
+use Dadansatria\Permission\Exceptions\PermissionDoesNotExist;
 
 /**
  * Interface PermissionInterface
- * @package Maklad\Permission\Contracts
+ * @package Dadansatria\Permission\Contracts
  */
 interface PermissionInterface
 {

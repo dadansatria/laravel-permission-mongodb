@@ -1,18 +1,18 @@
 <?php
 
-namespace Maklad\Permission\Middlewares;
+namespace Dadansatria\Permission\Middlewares;
 
 use Closure;
-use Maklad\Permission\Exceptions\UnauthorizedException;
-use Maklad\Permission\Exceptions\UnauthorizedPermission;
-use Maklad\Permission\Exceptions\UserNotLoggedIn;
-use Maklad\Permission\Helpers;
+use Dadansatria\Permission\Exceptions\UnauthorizedException;
+use Dadansatria\Permission\Exceptions\UnauthorizedPermission;
+use Dadansatria\Permission\Exceptions\UserNotLoggedIn;
+use Dadansatria\Permission\Helpers;
 use function explode;
 use function is_array;
 
 /**
  * Class PermissionMiddleware
- * @package Maklad\Permission\Middlewares
+ * @package Dadansatria\Permission\Middlewares
  */
 class PermissionMiddleware
 {

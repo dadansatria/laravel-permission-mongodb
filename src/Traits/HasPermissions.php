@@ -1,16 +1,16 @@
 <?php
 
-namespace Maklad\Permission\Traits;
+namespace Dadansatria\Permission\Traits;
 
 use Illuminate\Support\Collection;
 use Jenssegers\Mongodb\Eloquent\Builder;
 use Jenssegers\Mongodb\Eloquent\Model;
-use Maklad\Permission\Contracts\PermissionInterface;
-use Maklad\Permission\Contracts\PermissionInterface as Permission;
-use Maklad\Permission\Exceptions\GuardDoesNotMatch;
-use Maklad\Permission\Guard;
-use Maklad\Permission\Helpers;
-use Maklad\Permission\PermissionRegistrar;
+use Dadansatria\Permission\Contracts\PermissionInterface;
+use Dadansatria\Permission\Contracts\PermissionInterface as Permission;
+use Dadansatria\Permission\Exceptions\GuardDoesNotMatch;
+use Dadansatria\Permission\Guard;
+use Dadansatria\Permission\Helpers;
+use Dadansatria\Permission\PermissionRegistrar;
 use ReflectionException;
 use function collect;
 use function is_array;
@@ -18,7 +18,7 @@ use function is_string;
 
 /**
  * Trait HasPermissions
- * @package Maklad\Permission\Traits
+ * @package Dadansatria\Permission\Traits
  */
 trait HasPermissions
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Maklad\Permission\Exceptions;
+namespace Dadansatria\Permission\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use function app;
@@ -8,7 +8,7 @@ use function config;
 
 /**
  * Class UnauthorizedException
- * @package Maklad\Permission\Exceptions
+ * @package Dadansatria\Permission\Exceptions
  */
 class UnauthorizedException extends HttpException
 {
