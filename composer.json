@@ -1,5 +1,5 @@
 {
-    "name": "mostafamaklad/laravel-permission-mongodb",
+    "name": "dadansatria/laravel-permission-mongodb",
     "description": "Permission handling for Laravel 5.2 and up using mongodb",
     "keywords": [
         "laravel",
@@ -9,17 +9,24 @@
         "acl",
         "mostafamaklad",
         "maklad",
+        "dadansatria",
         "mostafa",
         "spatie",
         "jenssegers"
     ],
-    "homepage": "https://github.com/mostafamaklad/laravel-permission-mongodb",
+    "homepage": "https://github.com/dadansatria/laravel-permission-mongodb",
     "license": "MIT",
     "authors": [
         {
+            "name": "Dadan Satria",
+            "email": "dadansatria7@gmail.com",
+            "homepage": "https://github.com/dadansatria",
+            "role": "Developer"
+        },
+        {
             "name": "Mostafa Maklad",
             "email": "dev.mostafa.maklad@gmail.com",
-            "homepage": "https://github.com/mostafamaklad",
+            "homepage": "https://github.com/dadansatria",
             "role": "Developer"
         },
         {
@@ -44,12 +51,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Maklad\\Permission\\": "src"
+            "Dadansatria\\Permission\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Maklad\\Permission\\Test\\": "tests"
+            "Dadansatria\\Permission\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -63,7 +70,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Maklad\\Permission\\PermissionServiceProvider"
+                "Dadansatria\\Permission\\PermissionServiceProvider"
             ]
         }
     }
